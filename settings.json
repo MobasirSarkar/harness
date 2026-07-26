@@ -1,0 +1,86 @@
+{
+  "allowNonWorkspaceAccess": true,
+  "altScreenMode": "always",
+  "colorScheme": "tokyo night",
+  "enableTelemetry": false,
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "write_to_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Harness Nudge: Prefer replace_file_content or multi_replace_file_content over write_to_file for surgical code edits to save tokens.' >&2"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/mobasir/.local/bin/harness-cli"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "codebase-memory-mcp": {
+      "command": "/home/mobasir/.local/bin/codebase-memory-mcp"
+    },
+    "fff": {
+      "command": "/home/mobasir/.local/bin/fff-mcp"
+    }
+  },
+  "permissions": {
+    "allow": [
+      "mcp(engram/*)",
+      "mcp(codebase-memory-mcp/*)",
+      "mcp(fff/*)",
+      "command(fd)",
+      "command(rg)",
+      "command(git)",
+      "command(cargo)",
+      "command(npm)",
+      "command(npx)",
+      "command(node)",
+      "command(python3)",
+      "command(ast-grep)",
+      "command(sg)",
+      "command(sd)",
+      "command(eza)",
+      "command(yazi)",
+      "command(fzf)",
+      "command(which)",
+      "command(chmod)",
+      "command(cp)",
+      "command(mkdir)",
+      "command(ls)",
+      "command(echo)",
+      "command(cat)",
+      "command(curl)",
+      "command(/home/mobasir/.local/bin/harness-cli)",
+      "command(/home/mobasir/statusline.sh)",
+      "command(/home/mobasir/.gemini/hooks/session_start_ultra.sh)",
+      "command(/home/mobasir/.local/bin/fff-mcp)",
+      "command(/home/mobasir/.local/bin/codebase-memory-mcp)",
+      "command(/home/mobasir/go/bin/engram)",
+      "read_file(/home/mobasir)",
+      "write_file(/home/mobasir)"
+    ]
+  },
+  "runningLightSpeed": "fast",
+  "showFeedbackSurvey": false,
+  "showTips": false,
+  "statusLine": {
+    "type": "command",
+    "command": "/home/mobasir/statusline.sh"
+  },
+  "trustedWorkspaces": [
+    "/home/mobasir",
+    "/home/mobasir/.gemini"
+  ]
+}

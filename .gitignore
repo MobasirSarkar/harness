@@ -1,0 +1,4 @@
+# Rust build target
+harness-cli/target/
+**/target/
+*.log
