@@ -63,7 +63,7 @@ git clone https://github.com/<your-username>/harness.git ~/.harness && ~/.harnes
 Or via direct `curl`:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/<your-username>/harness/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/MobasirSarkar/harness/main/install.sh | bash
 ```
 
 ---
@@ -72,7 +72,7 @@ curl -sSL https://raw.githubusercontent.com/<your-username>/harness/main/install
 
 1. **Clone Repository**:
    ```bash
-   git clone https://github.com/<your-username>/harness.git ~/harness
+   git clone https://github.com/MobasirSarkar/harness.git ~/harness
    cd ~/harness
    ```
 
