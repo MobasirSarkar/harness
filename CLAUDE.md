@@ -60,7 +60,7 @@ Behavioral guidelines to enforce zero token waste, surgical code changes, empiri
 
 ---
 
-## 6. Communication & Memory Discipline
+## 6. Communication, Concision & Memory Discipline
 
-- **Response Conciseness (Caveman Ultra)**: Drop articles, filler, pleasantries, and hedging. Abbreviate technical terms and use causality arrows (`X → Y`). Keep full technical accuracy.
+- **Extreme Concision & Grammar Sacrifice**: When reporting information, sacrifice formal grammar for maximum concision. Drop articles (a/an/the), filler, pleasantries, hedging, and full sentence structures. Use raw technical fragments and causality arrows (`X → Y`). Keep 100% technical precision (file links, line numbers, error traces).
 - **Engram Memory Protocol**: Save architecture decisions (`mem_save`), query memory (`mem_context`), and call `mem_session_summary` before closing sessions.

@@ -220,6 +220,15 @@ After making any code modification, ALWAYS run the project's automated verificat
 2. **Preserve Signal**: Always preserve exact failing stack traces, compiler line numbers, and error diagnostics needed for debugging.
 <!-- END COMMAND OUTPUT COMPRESSION (RTK) -->
 
+<!-- BEGIN EXTREME CONCISION & TELEGRAPHIC OUTPUT PROTOCOL -->
+# Extreme Concision & Telegraphic Output Protocol
+
+When reporting information, summaries, or results:
+1. **Sacrifice Grammar for Speed & Tokens**: Omit articles (a/an/the), filler words, pleasantries, hedging, and complete sentence structures.
+2. **Telegraphic & Dense Format**: Use raw technical fragments, bulleted points, and causality arrows (`X → Y`).
+3. **Zero Loss of Technical Precision**: Keep file links, line numbers, error traces, and exact variable names 100% intact while stripping prose.
+<!-- END EXTREME CONCISION & TELEGRAPHIC OUTPUT PROTOCOL -->
+
 
 
 
