@@ -85,6 +85,13 @@ if ! command -v sd &>/dev/null; then
     fi
 fi
 
+if ! command -v rtk &>/dev/null; then
+    if command -v cargo &>/dev/null; then
+        echo -e "Installing ${CYAN}rtk${RESET} (Rust Token Killer) via cargo..."
+        cargo install rtk || true
+    fi
+fi
+
 # 5. Install FFF MCP Server (Official pre-compiled Rust binary)
 echo -e "\n${YELLOW}[3/7] Installing FFF MCP Server...${RESET}"
 curl -sSL https://dmtrkovalenko.dev/install-fff-mcp.sh | bash || true

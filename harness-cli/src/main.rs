@@ -29,8 +29,11 @@ fn main() -> io::Result<()> {
     writeln!(handle, "3. Simplicity First: Minimum code, no speculative features/abstractions. 200 lines -> 50 lines.")?;
     writeln!(handle, "4. Surgical Changes & Anti-Leak Rules: write_to_file is restricted ONLY to NEW files. Edit existing files strictly using replace_file_content or multi_replace_file_content.")?;
 
+    writeln!(handle, "\nRTK COMMAND OUTPUT COMPRESSION ACTIVE")?;
+    writeln!(handle, "- Shell command execution (rtk/cargo/npm/git/pytest) outputs are compressed (60-90% token reduction). Boilerplate log noise is collapsed while preserving exact stack traces and error signals.")?;
+
     writeln!(handle, "\nMATT POCOCK SKILLS AUTO-INTEGRATION ACTIVE")?;
-    writeln!(handle, "- Automatically pairs Matt's engineering skills (research, wayfinder, tdd, code-review, etc.) with Modern Fast Search (fff/rg/fd/ast-grep), Codebase Memory MCP, Engram persistence, Ponytail/Caveman compression, and Karpathy surgical rules.")?;
+    writeln!(handle, "- Automatically pairs Matt's engineering skills (research, wayfinder, tdd, code-review, etc.) with Modern Fast Search (fff/rg/fd/ast-grep), Codebase Memory MCP, Engram persistence, Ponytail/Caveman compression, RTK output filtering, and Karpathy surgical rules.")?;
 
     writeln!(handle, "\nSTRICT EVIDENCE & VERIFICATION RULES ACTIVE")?;
     writeln!(handle, "- No Assumptions Policy: Edits must be backed by logs, compiler errors, failing tests, or verified search proof.")?;

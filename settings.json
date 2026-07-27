@@ -51,6 +51,7 @@
       "command(ast-grep)",
       "command(sg)",
       "command(sd)",
+      "command(rtk)",
       "command(eza)",
       "command(yazi)",
       "command(fzf)",

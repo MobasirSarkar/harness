@@ -213,6 +213,13 @@ After making any code modification, ALWAYS run the project's automated verificat
 5. **No False Declarations**: NEVER claim a task is completed until the automated verification suite passes with exit code 0.
 <!-- END HARDENED FILE EDITING PROTOCOL -->
 
+<!-- BEGIN COMMAND OUTPUT COMPRESSION (RTK) -->
+# Command Output Compression Protocol (RTK Integration)
+
+1. **Token-Saving CLI Execution**: When running shell commands (`npm test`, `pytest`, `cargo test`, `git status`, `git log`, `docker ps`), leverage `rtk` (Rust Token Killer) or filter verbose outputs to strip boilerplate log noise, progress bars, and passing assertions.
+2. **Preserve Signal**: Always preserve exact failing stack traces, compiler line numbers, and error diagnostics needed for debugging.
+<!-- END COMMAND OUTPUT COMPRESSION (RTK) -->
+
 
 
 

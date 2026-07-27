@@ -42,6 +42,7 @@ harness-cli (Rust v1.0)    fff-mcp + rg + sg + graph   Engram SQLite FTS5 Databa
 | **Persistent Memory** | `Engram` (SQLite FTS5) | Persistent cross-session memory with automatic context injection |
 | **Surgical Editing** | `replace_file_content` | Restricted `write_to_file` to NEW files; line diffs for existing files |
 | **Response Compression** | `Caveman Ultra` | ~75% token reduction on LLM responses |
+| **Command Output Compression** | `RTK` (Rust Token Killer v0.1.0) | 60%–90% token reduction on shell command/test outputs |
 | **Engineering Quality** | Matt Pocock Skills | 4-phase pipeline (`research` ➔ `to-spec` ➔ `tdd` ➔ `code-review`) |
 | **Strict Evidence Rule** | Protocol in `GEMINI.md` | Forbids edits without failing tests, stack traces, or compiler errors |
 | **Post-Edit Verification** | Automated Pipeline | Mandatory clean run (`lint` ➔ `typecheck` ➔ `tests`) before task completion |
