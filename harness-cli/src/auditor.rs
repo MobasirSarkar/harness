@@ -67,6 +67,7 @@ impl ToolAuditor<SystemPathResolver> {
 }
 
 impl<R: PathResolver> ToolAuditor<R> {
+    #[allow(dead_code)]
     pub fn new(resolver: R) -> Self {
         Self { resolver }
     }

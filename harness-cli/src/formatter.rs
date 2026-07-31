@@ -1,11 +1,5 @@
-use serde::Serialize;
 use serde_json::json;
 use crate::providers::HarnessContext;
-
-#[derive(Serialize)]
-pub struct HookResponse {
-    pub additional_context: String,
-}
 
 pub struct OutputFormatter;
 
