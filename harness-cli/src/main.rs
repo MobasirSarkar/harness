@@ -3,8 +3,13 @@ use std::io::{self, Write};
 use std::process::Command;
 
 fn main() -> io::Result<()> {
-    let stdout = io::stdout();
-    let mut handle = io::BufWriter::new(stdout.lock());
+    let is_json = env::args().any(|arg| arg == "--json");
+    let mut raw_buf = Vec::new();
+    let mut handle: Box<dyn Write> = if is_json {
+        Box::new(&mut raw_buf)
+    } else {
+        Box::new(io::BufWriter::new(io::stdout().lock()))
+    };
 
     // 1. Header & 4-Tier Discovery Strategy
     writeln!(handle, "=== S-TIER AI ENGINEERING HARNESS ACTIVE (Rust Engine v1.0) ===")?;
@@ -84,5 +89,18 @@ fn main() -> io::Result<()> {
     }
 
     handle.flush()?;
+    drop(handle);
+
+    if is_json {
+        let text = String::from_utf8_lossy(&raw_buf);
+        let json_escaped = text
+            .replace('\\', "\\\\")
+            .replace('"', "\\\"")
+            .replace('\n', "\\n")
+            .replace('\r', "\\r")
+            .replace('\t', "\\t");
+        print!("{{\"additionalContext\":\"{}\"}}", json_escaped);
+    }
+
     Ok(())
 }

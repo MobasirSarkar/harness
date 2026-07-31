@@ -15,13 +15,24 @@
         ]
       }
     ],
-    "SessionStart": [
+    "UserPrompt": [
       {
-        "matcher": "startup",
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "/home/mobasir/.local/bin/harness-cli"
+            "command": "/home/mobasir/.local/bin/harness-cli --json"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/mobasir/.local/bin/harness-cli --json"
           }
         ]
       }
@@ -64,6 +75,7 @@
       "command(cat)",
       "command(curl)",
       "command(/home/mobasir/.local/bin/harness-cli)",
+      "command(/home/mobasir/.local/bin/harness-cli --json)",
       "command(/home/mobasir/statusline.sh)",
       "command(/home/mobasir/.gemini/hooks/session_start_ultra.sh)",
       "command(/home/mobasir/.local/bin/fff-mcp)",
