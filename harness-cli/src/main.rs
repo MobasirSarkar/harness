@@ -1,5 +1,7 @@
 mod tools;
 mod auditor;
+mod providers;
+mod engine;
 
 use std::env;
 use std::io::{self, Write};
