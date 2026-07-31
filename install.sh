@@ -125,6 +125,11 @@ if [ -f "$SCRIPT_DIR/statusline.sh" ]; then
     chmod +x "$USER_HOME/statusline.sh"
 fi
 
+if [ -d "$USER_HOME/.agents/skills" ]; then
+    mkdir -p "$USER_HOME/.gemini/antigravity-cli/builtin/skills"
+    cp -rn "$USER_HOME/.agents/skills/"* "$USER_HOME/.gemini/antigravity-cli/builtin/skills/" 2>/dev/null || true
+fi
+
 # 8. Dynamically Deploy & Sanitize settings.json (User Home Replacement)
 echo -e "\n${YELLOW}[6/7] Deploying User-Agnostic settings.json...${RESET}"
 
