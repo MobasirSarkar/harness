@@ -33,3 +33,14 @@ fn test_cli_audit_flag_output() {
     assert!(stdout.contains("HARNESS TOOL INVOCATION TELEMETRY & HEALTH AUDIT"));
     assert!(stdout.contains("FFF MCP Server"));
 }
+
+#[test]
+fn test_cli_short_status_flag() {
+    let mut cmd = Command::new(env!("CARGO_BIN_EXE_harness-cli"));
+    cmd.arg("--status-short");
+    let output = cmd.output().expect("Failed to execute harness-cli binary");
+    assert!(output.status.success());
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    assert!(stdout.contains("HARNESS: RUST v2.0"));
+    assert!(stdout.contains("ACTIVE"));
+}

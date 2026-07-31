@@ -13,6 +13,13 @@ fn main() -> io::Result<()> {
     let args: Vec<String> = env::args().collect();
     let is_json = args.iter().any(|arg| arg == "--json");
     let is_audit = args.iter().any(|arg| arg == "--audit");
+    let is_short = args.iter().any(|arg| arg == "--status-short" || arg == "--short");
+
+    if is_short {
+        let auditor = auditor::ToolAuditor::default_system();
+        println!("{}", auditor.generate_short_status_text());
+        return Ok(());
+    }
 
     let opts = EngineOpts::default();
     let ctx = HarnessEngine::compose_context(&opts);

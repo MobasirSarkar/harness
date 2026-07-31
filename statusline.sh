@@ -89,7 +89,14 @@ except Exception:
 # 5. Rust Harness CLI Indicator
 harness_bin = os.path.expanduser("~/.local/bin/harness-cli")
 if os.path.isfile(harness_bin) and os.access(harness_bin, os.X_OK):
-    harness_str = f" {sep} \033[38;5;51m🦀 HARNESS: RUST v1.0 [FFF+ENGRAM]\033[0m"
+    try:
+        harness_out = subprocess.check_output(
+            [harness_bin, "--status-short"],
+            stderr=subprocess.DEVNULL
+        ).decode().strip()
+        harness_str = f" {sep} {harness_out}" if harness_out else f" {sep} \033[38;5;51m🦀 HARNESS: RUST v2.0\033[0m"
+    except Exception:
+        harness_str = f" {sep} \033[38;5;51m🦀 HARNESS: RUST v2.0\033[0m"
 else:
     harness_str = ""
 

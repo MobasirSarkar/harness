@@ -109,6 +109,18 @@ impl<R: PathResolver> ToolAuditor<R> {
         }
         out
     }
+
+    pub fn generate_short_status_text(&self) -> String {
+        let results = self.audit_all();
+        let total = results.len();
+        let active_count = results.iter().filter(|r| matches!(r.state, ToolState::Active { .. })).count();
+
+        if active_count == total {
+            format!("\x1b[38;5;51m🦀 HARNESS: RUST v2.0 ({}/{} ACTIVE)\x1b[0m", active_count, total)
+        } else {
+            format!("\x1b[38;5;214m🦀 HARNESS: RUST v2.0 ({}/{} ACTIVE, {} MISSING)\x1b[0m", active_count, total, total - active_count)
+        }
+    }
 }
 
 #[cfg(test)]
