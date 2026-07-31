@@ -1,3 +1,6 @@
+mod tools;
+mod auditor;
+
 use std::env;
 use std::io::{self, Write};
 use std::process::Command;
